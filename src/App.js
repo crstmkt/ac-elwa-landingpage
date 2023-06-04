@@ -16,25 +16,46 @@ function App() {
     };
   }, []);
 
+  const getBackgroundColor = (temperature) => {
+    if (temperature < 47) {
+      return "lightblue";
+    } else if (temperature < 57) {
+      return "blue";
+    } else if (temperature < 67) {
+      return "lightpink";
+    } else {
+      return "red";
+    }
+  };
+
   return (
-    <div>
-              <h1>
-                {typeof boilerJson === "undefined"
-                  ? null
-                  : formatTemp(boilerJson.temp1)}
-              </h1>
-              <h1>
-                {" "}
-                {typeof boilerJson === "undefined"
-                  ? null
-                  : convertStatus(boilerJson.status)}
-              </h1>
-              <h1>
-                {typeof boilerJson === "undefined"
-                  ? null
-                  : boilerJson.power + "W"}
-              </h1>
-            </div>
+    <div className="container">
+    <div className="boiler" style={{ backgroundColor: getBackgroundColor(boilerJson?.temp1) }}>
+      <h1>{typeof boilerJson === "undefined" ? null : formatTemp(boilerJson.temp1)}</h1>
+    </div>
+    <div className="progress-bar">
+      <div className="progress" style={{ width: `${(boilerJson?.power / 3000) * 100}%` }}></div>
+    </div>
+    <div className="power">{typeof boilerJson === "undefined" ? null : `${boilerJson.power}W`}</div>
+  </div>
+    // <div>
+    //           <h1>
+    //             {typeof boilerJson === "undefined"
+    //               ? null
+    //               : formatTemp(boilerJson.temp1)}
+    //           </h1>
+    //           <h1>
+    //             {" "}
+    //             {typeof boilerJson === "undefined"
+    //               ? null
+    //               : convertStatus(boilerJson.status)}
+    //           </h1>
+    //           <h1>
+    //             {typeof boilerJson === "undefined"
+    //               ? null
+    //               : boilerJson.power + "W"}
+    //           </h1>
+    //         </div>
   );
 }
 
