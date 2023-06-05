@@ -18,6 +18,32 @@
   font-size: 32px;
   font-weight: bold;
   color: #fff;
+  position: relative;
+}
+.boiler::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 5px solid transparent;
+  border-top-color: orange;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate::after {
+  animation: spin 1s linear infinite;
 }
 
 .progress-bar {

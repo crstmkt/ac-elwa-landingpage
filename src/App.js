@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="container">
       <div
-        className="boiler"
+        className={`boiler ${boilerJson?.status === "HEAT" ? "animate" : ""}`}
         style={{ backgroundColor: getBackgroundColor(boilerJson?.temp1) }}
       >
         <h1>
