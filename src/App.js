@@ -51,7 +51,7 @@ function App() {
       <div className="power">
         {typeof boilerJson === "undefined" ? null : `${boilerJson.power}W`}
       </div>
-      <div>{convertStatus(boilerJson?.status)}</div>
+      {/* <div>{convertStatus(boilerJson?.status)}</div> */}
     </div>
     // <div>
     //           <h1>
