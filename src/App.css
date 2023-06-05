@@ -30,7 +30,6 @@
   border: 5px solid transparent;
   border-top-color: orange;
   border-radius: 50%;
-  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
@@ -43,7 +42,7 @@
 }
 
 .animate::after {
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 .progress-bar {

@@ -31,7 +31,9 @@ function App() {
   return (
     <div className="container">
       <div
-        className={`boiler ${boilerJson?.status === "HEAT" ? "animate" : ""}`}
+        className={`boiler ${
+          convertStatus(boilerJson?.status) === "HEAT" ? "animate" : ""
+        }`}
         style={{ backgroundColor: getBackgroundColor(boilerJson?.temp1) }}
       >
         <h1>
@@ -49,6 +51,7 @@ function App() {
       <div className="power">
         {typeof boilerJson === "undefined" ? null : `${boilerJson.power}W`}
       </div>
+      <div>{convertStatus(boilerJson?.status)}</div>
     </div>
     // <div>
     //           <h1>
