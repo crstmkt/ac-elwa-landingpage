@@ -1,7 +1,8 @@
 // ########## HEIZSTAB #########
 export function fetchBoilerJson() {
-  return fetch("http://192.168.20.202/data.jsn")
-    .then((response) => response.json())
+  return fetch("http://192.168.20.202/data.jsn").then((response) =>
+    response.json()
+  );
 }
 
 export function formatTemp(temp) {

@@ -51,26 +51,7 @@ function App() {
       <div className="power">
         {typeof boilerJson === "undefined" ? null : `${boilerJson.power}W`}
       </div>
-      {/* <div>{convertStatus(boilerJson?.status)}</div> */}
     </div>
-    // <div>
-    //           <h1>
-    //             {typeof boilerJson === "undefined"
-    //               ? null
-    //               : formatTemp(boilerJson.temp1)}
-    //           </h1>
-    //           <h1>
-    //             {" "}
-    //             {typeof boilerJson === "undefined"
-    //               ? null
-    //               : convertStatus(boilerJson.status)}
-    //           </h1>
-    //           <h1>
-    //             {typeof boilerJson === "undefined"
-    //               ? null
-    //               : boilerJson.power + "W"}
-    //           </h1>
-    //         </div>
   );
 }
 
