@@ -1,8 +1,17 @@
 // ########## HEIZSTAB #########
 export function fetchBoilerJson() {
-  return fetch("https://heat.stiens.rocks/api/").then((response) =>
-    response.json()
-  );
+  return fetch(getApiPath()).then((response) => response.json());
+}
+
+function getApiPath() {
+  if (window.location.protocol === "http:") {
+    return "http://192.168.20.202/data.jsn";
+  } else if (window.location.protocol === "https:") {
+    return "https://heat.stiens.rocks/api/";
+  } else {
+    // Standard-Pfad, falls das Protokoll nicht http oder https ist
+    return;
+  }
 }
 
 export function formatTemp(temp) {
