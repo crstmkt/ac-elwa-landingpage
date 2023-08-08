@@ -1,6 +1,6 @@
 // ########## HEIZSTAB #########
 export function fetchBoilerJson() {
-  return fetch("http://192.168.20.202/data.jsn").then((response) =>
+  return fetch("https://heat.stiens.rocks/api/").then((response) =>
     response.json()
   );
 }
