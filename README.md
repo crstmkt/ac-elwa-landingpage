@@ -1,6 +1,6 @@
 # AC-ELWA-Landingpage
 
-Simple React based WebApp as replacement for that stupid crappy HTML File they offer.
+Simple React based PWA to run on a(ny) Mobile Phone either than that stupid crappy HTML File they offer.
 
 ![Here be dragons](pics/overview.png)
 
