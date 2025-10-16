@@ -4,7 +4,10 @@ export function fetchBoilerJson() {
 }
 
 function getApiPath() {
-  if (window.location.protocol === "http:") {
+  if (window.location.hostname === "localhost") {
+    // Lokaler Fake-Server
+    return "http://localhost:4000/data.jsn";
+  } else if (window.location.protocol === "http:") {
     return "http://192.168.20.202/data.jsn";
   } else if (window.location.protocol === "https:") {
     return "https://heat.stiens.rocks/api/";
@@ -15,9 +18,16 @@ function getApiPath() {
 }
 
 export function formatTemp(temp) {
-  return (
-    temp.toString().substring(0, 2) + "." + temp.toString().substring(2) + "C"
-  );
+  if (temp == null || Number.isNaN(Number(temp))) return "–"; // Fallback
+
+  const n = Math.round(Number(temp)); // erwartet z. B. 542 (=54.2°C)
+  const neg = n < 0 ? "-" : "";
+  const s = Math.abs(n).toString();
+
+  // 1-stellige Werte -> "0.xC"
+  if (s.length === 1) return `${neg}0.${s}C`;
+  // allgemeiner Fall: letzte Ziffer ist die Nachkommastelle
+  return `${neg}${s.slice(0, -1)}.${s.slice(-1)}C`;
 }
 
 export function convertStatus(statusNr) {
