@@ -25,7 +25,7 @@ const STATUS = {
 const TICK_MS = 2000; // Simulation alle 2 s
 const MIN_TEMP = 200; // 20.0°C (Zehntel)
 const MAX_TEMP = 800; // 80.0°C
-const BAND = 30; // Hysterese: 3.0°C unter Soll wird wieder geheizt
+const BAND = 300; // Hysterese: 3.0°C unter Soll wird wieder geheizt
 
 const COOL_RATE = [1, 3]; // −0.1 … −0.3 °C pro Tick
 const HEAT_RATE = [6, 14]; // +0.6 … +1.4 °C pro Tick
@@ -39,8 +39,8 @@ const WATT_BOOST_MIN = 2200,
 
 // ---- Gerätezustand ----
 const state = {
-  temp: 520, // 52.0 °C (Zehntel)
-  targetTemp: 600, // 60.0 °C (Zehntel)
+  temp: 300, // 30.0 °C (Zehntel)
+  targetTemp: 800, // 80.0 °C (Zehntel)
   powerOn: true, // Geräteschalter
   status: STATUS.SETUP,
   boostUntil: 0, // ms-Timestamp
