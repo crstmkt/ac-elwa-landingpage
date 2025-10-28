@@ -8,8 +8,10 @@ function getApiPath() {
     // Lokaler Fake-Server
     return "http://localhost:4000/data.jsn";
   } else if (window.location.protocol === "http:") {
+    // Lokales Netzwerk
     return "http://192.168.20.202/data.jsn";
   } else if (window.location.protocol === "https:") {
+    // Öffentliche URL
     return "https://heat.stiens.rocks/api/";
   } else {
     // Standard-Pfad, falls das Protokoll nicht http oder https ist

@@ -170,5 +170,5 @@ app.post("/reset", (req, res) => {
 app.get("/health", (_req, res) => res.json({ ok: true }));
 
 app.listen(PORT, HOST, () => {
-  console.log(`✅ Happy Path fake backend läuft auf http://${HOST}:${PORT}`);
+  console.log(`Fake backend läuft auf http://${HOST}:${PORT}`);
 });

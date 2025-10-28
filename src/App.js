@@ -35,6 +35,7 @@ function App() {
     }
   };
 
+  // Frühere Implementierung
   // const getBackgroundColor = (temperature) => {
   //   if (temperature < 470) {
   //     return "blue";
@@ -51,10 +52,10 @@ function App() {
     <div className="container">
       <div
         className={`boiler ${
+          //wenn der Heizstab heizt soll das gelbe Kreisviertel sich drehen
           convertStatus(boilerJson?.status) === "HEAT" ? "animate" : ""
         }`}
-        style={{ backgroundColor: getBackgroundColor(boilerJson?.temp1) }}
-      >
+        style={{ backgroundColor: getBackgroundColor(boilerJson?.temp1) }}>
         <h1>
           {typeof boilerJson === "undefined"
             ? null
@@ -64,8 +65,7 @@ function App() {
       <div className="progress-bar">
         <div
           className="progress"
-          style={{ width: `${(boilerJson?.power / 3000) * 100}%` }}
-        ></div>
+          style={{ width: `${(boilerJson?.power / 3000) * 100}%` }}></div>
       </div>
       <div className="power">
         {typeof boilerJson === "undefined" ? null : `${boilerJson.power}W`}
