@@ -1,3 +1,5 @@
+This Repository has been moved to codeberg https://codeberg.org/crstst/ac-elwa-landingpage
+
 # AC-ELWA-Landingpage
 
 Simple React based PWA to run on a(ny) Mobile Phone either than that stupid crappy HTML File they offer.
